@@ -1,0 +1,25 @@
+---
+import Nav from '@/sections/Nav.astro'
+
+import '@/styles/globals.css'
+import '@fontsource-variable/inter'
+---
+
+<!doctype html>
+<html lang="en" class="m-0 h-full w-full">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Noé Tatoud</title>
+	</head>
+	<body class="m-0 flex h-screen flex-col bg-background text-foreground">
+		<div class="pointer-events-none fixed inset-0 z-50 bg-[url('/noise-texture.svg')] opacity-30">
+		</div>
+		<Nav />
+		<main class="relative flex w-full items-center justify-center">
+			<slot />
+		</main>
+	</body>
+</html>

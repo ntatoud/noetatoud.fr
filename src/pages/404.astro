@@ -1,0 +1,22 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import doodle from '@/assets/404Doodle.svg'
+---
+
+<Layout title="This page does not exist">
+	<main class="mx-auto flex w-full max-w-7xl items-center px-6 pb-16 pt-10 sm:pb-24 lg:px-8">
+		<div class="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
+			<p class="text-3xl font-bold leading-8 text-primary sm:text-5xl">404</p>
+			<h1 class="mt-4 text-xl font-semibold tracking-tight text-foreground">
+				Oops, we could not find the page you are looking for.
+			</h1>
+			<Image
+				class="aspect-square object-cover object-left-top py-10 lg:aspect-auto lg:w-full xl:h-full"
+				src={doodle}
+				alt="Doodle"
+				loading="eager"
+			/>
+		</div>
+	</main>
+</Layout>
