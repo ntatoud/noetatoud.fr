@@ -1,28 +1,28 @@
 ---
 import Link from '@/components/Link.astro'
-import { HeroBackground } from '@/components/ui/HeroBackground'
 import { Image } from 'astro:assets'
 import doodle from '@/assets/HeroDoodle.svg'
 import Icon from '@/components/Icon.astro'
 ---
 
 <section
-	class="mx-auto flex min-h-screen flex-1 flex-col-reverse items-center justify-center px-4 md:px-0 xl:flex-row"
+	class="mx-auto mt-16 flex min-h-screen flex-1 flex-col-reverse items-center justify-end px-4 lg:mt-0 lg:flex-row lg:justify-center lg:px-0"
 >
-	<div class="z-10 flex w-full flex-col justify-center gap-3 xl:h-full">
+	<div class="z-10 flex w-full flex-col justify-center gap-3 lg:h-full">
 		<div class="flex flex-col gap-2">
-			<h1 class="text-4xl text-muted-foreground">
-				Hi there! I'm <strong
-					class="bg-gradient-to-tr from-green-400 to-green-800 bg-clip-text font-bold text-transparent underline-offset-2"
-					>Noé Tatoud</strong
+			<div>
+				<p class="text-sm text-muted-foreground">Hi there! My name is</p>
+				<h1
+					class="bg-gradient-to-tr from-green-400 to-green-800 bg-clip-text text-4xl font-bold text-transparent"
 				>
-			</h1>
-			<span class="text-xl">
-				{'>'}
+					Noé Tatoud
+				</h1>
+			</div>
+			<p class="text-xl">
 				Web developer &amp; Climber<span class="animate-pulse duration-1000">_</span>
-			</span>
+			</p>
 		</div>
-		<ul class="flex w-full list-disc flex-col gap-2 p-4 text-muted-foreground">
+		<ul class="flex w-full flex-col gap-2 py-4 text-muted-foreground">
 			<li>
 				Currently working at <Link href="https://www.bearstudio.fr/" title="Bearstudio"
 					>Bearstudio</Link
@@ -47,21 +47,13 @@ import Icon from '@/components/Icon.astro'
 			</Link>
 		</div>
 	</div>
-	<div class="relative xl:-ml-36 xl:scale-125">
-		<div
-			class="absolute -z-10 hidden h-full w-full rounded-full bg-background blur-xl xl:flex xl:scale-110"
-		>
-		</div>
-
+	<div class="relative lg:-ml-36 lg:scale-125">
 		<div class="absolute right-5 top-5 -z-10 h-1/3 w-1/3 rounded-full bg-green-800"></div>
 		<Image
-			class="aspect-square object-cover object-left-top lg:aspect-auto lg:w-full xl:h-full"
+			class="aspect-square object-cover object-left-top md:aspect-auto lg:h-full lg:w-full"
 			src={doodle}
 			alt="Doodle"
 			loading="eager"
 		/>
-	</div>
-	<div class="absolute -right-10 -z-20 hidden overflow-hidden rounded-full opacity-20 xl:flex">
-		<HeroBackground />
 	</div>
 </section>
