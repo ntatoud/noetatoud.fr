@@ -1,27 +1,27 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-4 ">
-      <div className="max-w-3xl w-full text-center space-y-8">
-        <h1 className="text-xl tracking-wide font-light">
-          Hi, I’m{" "}
-          <span className="text-accent-foreground font-medium font-serif">
+    <section className="flex min-h-screen flex-col items-center justify-center px-4">
+      <div className="w-full max-w-3xl space-y-8 text-center">
+        <h1 className="text-xl font-light tracking-wide">
+          Hi, I’m{' '}
+          <span className="font-serif font-medium text-accent-foreground">
             Noé Tatoud
-          </span>{" "}
-          — a full-stack{" "}
-          <span className="text-accent-foreground font-medium font-serif">
+          </span>{' '}
+          — a full-stack{' '}
+          <span className="font-serif font-medium text-accent-foreground">
             developer
-          </span>{" "}
+          </span>{' '}
           with a passion for crafting slick web experiences.
         </h1>
 
         <div className="flex justify-center gap-4">
-          <Button className="uppercase tracking-wide">View Projects</Button>
-          <Button variant="outline" className="uppercase tracking-wide">
-            Contact Me <ArrowRight className="w-4 h-4" aria-hidden />
+          <Button className="tracking-wide uppercase">View Projects</Button>
+          <Button variant="outline" className="tracking-wide uppercase">
+            Contact Me <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
         </div>
       </div>

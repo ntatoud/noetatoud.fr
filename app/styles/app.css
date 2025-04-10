@@ -1,11 +1,11 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
 @custom-variant nature (&:is(.nature *));
 
-@import "./themes.css";
+@import './themes.css';
 
 html,
 body {
@@ -78,6 +78,6 @@ body {
     @apply transition-colors duration-300;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background font-sans text-foreground;
   }
 }

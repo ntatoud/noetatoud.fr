@@ -1,5 +1,5 @@
-import { themes, useTheme } from "@/components/theme-provider";
-import { Button } from "@/components/ui/button";
+import { themes, useTheme } from '@/components/theme-provider';
+import { Button } from '@/components/ui/button';
 import {
   CommandDialog,
   CommandEmpty,
@@ -7,10 +7,10 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command";
-import { Brush, Moon, Sun, TreePine } from "lucide-react";
-import React from "react";
-import { Badge } from "@/components/ui/badge";
+} from '@/components/ui/command';
+import { Brush, Moon, Sun, TreePine } from 'lucide-react';
+import React from 'react';
+import { Badge } from '@/components/ui/badge';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -19,14 +19,14 @@ export function ThemeSwitcher() {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
     };
 
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
   }, []);
 
   return (

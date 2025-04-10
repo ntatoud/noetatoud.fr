@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 import {
   type HTMLMotionProps,
   motion,
@@ -8,11 +8,11 @@ import {
   type Transition,
   useMotionValue,
   useSpring,
-} from "motion/react";
+} from 'motion/react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-interface StarLayerProps extends HTMLMotionProps<"div"> {
+interface StarLayerProps extends HTMLMotionProps<'div'> {
   count: number;
   size: number;
   transition: Transition;
@@ -26,7 +26,7 @@ const generateStars = (count: number, starColor: string) => {
     const y = Math.floor(Math.random() * 4000) - 2000;
     shadows.push(`${x}px ${y}px 0 ${starColor}`);
   }
-  return shadows.join(", ");
+  return shadows.join(', ');
 };
 
 const StarLayer = React.forwardRef<HTMLDivElement, StarLayerProps>(
@@ -34,14 +34,14 @@ const StarLayer = React.forwardRef<HTMLDivElement, StarLayerProps>(
     {
       count = 1000,
       size = 1,
-      transition = { repeat: Infinity, duration: 50, ease: "linear" },
-      starColor = "#fff",
+      transition = { repeat: Infinity, duration: 50, ease: 'linear' },
+      starColor = '#fff',
       className,
       ...props
     },
     ref
   ) => {
-    const [boxShadow, setBoxShadow] = React.useState<string>("");
+    const [boxShadow, setBoxShadow] = React.useState<string>('');
 
     React.useEffect(() => {
       setBoxShadow(generateStars(count, starColor));
@@ -52,11 +52,11 @@ const StarLayer = React.forwardRef<HTMLDivElement, StarLayerProps>(
         ref={ref}
         animate={{ y: [0, -2000] }}
         transition={transition}
-        className={cn("absolute top-0 left-0 w-full h-[2000px]", className)}
+        className={cn('absolute top-0 left-0 h-[2000px] w-full', className)}
         {...props}
       >
         <div
-          className="absolute bg-transparent rounded-full"
+          className="absolute rounded-full bg-transparent"
           style={{
             width: `${size}px`,
             height: `${size}px`,
@@ -64,7 +64,7 @@ const StarLayer = React.forwardRef<HTMLDivElement, StarLayerProps>(
           }}
         />
         <div
-          className="absolute bg-transparent rounded-full top-[2000px]"
+          className="absolute top-[2000px] rounded-full bg-transparent"
           style={{
             width: `${size}px`,
             height: `${size}px`,
@@ -76,7 +76,7 @@ const StarLayer = React.forwardRef<HTMLDivElement, StarLayerProps>(
   }
 );
 
-StarLayer.displayName = "StarLayer";
+StarLayer.displayName = 'StarLayer';
 
 interface StarsBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
   factor?: number;
@@ -93,7 +93,7 @@ const StarsBackground = React.forwardRef<HTMLDivElement, StarsBackgroundProps>(
       factor = 0.05,
       speed = 50,
       transition = { stiffness: 50, damping: 20 },
-      starColor = "#fff",
+      starColor = '#fff',
       ...props
     },
     ref
@@ -119,7 +119,7 @@ const StarsBackground = React.forwardRef<HTMLDivElement, StarsBackgroundProps>(
     return (
       <div
         ref={ref}
-        className={cn("relative size-full overflow-hidden", className)}
+        className={cn('relative size-full overflow-hidden', className)}
         onMouseMove={handleMouseMove}
         {...props}
       >
@@ -127,7 +127,7 @@ const StarsBackground = React.forwardRef<HTMLDivElement, StarsBackgroundProps>(
           <StarLayer
             count={1000}
             size={1}
-            transition={{ repeat: Infinity, duration: speed, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: speed, ease: 'linear' }}
             starColor={starColor}
           />
           <StarLayer
@@ -136,7 +136,7 @@ const StarsBackground = React.forwardRef<HTMLDivElement, StarsBackgroundProps>(
             transition={{
               repeat: Infinity,
               duration: speed * 2,
-              ease: "linear",
+              ease: 'linear',
             }}
             starColor={starColor}
           />
@@ -146,7 +146,7 @@ const StarsBackground = React.forwardRef<HTMLDivElement, StarsBackgroundProps>(
             transition={{
               repeat: Infinity,
               duration: speed * 3,
-              ease: "linear",
+              ease: 'linear',
             }}
             starColor={starColor}
           />
@@ -157,7 +157,7 @@ const StarsBackground = React.forwardRef<HTMLDivElement, StarsBackgroundProps>(
   }
 );
 
-StarsBackground.displayName = "StarsBackground";
+StarsBackground.displayName = 'StarsBackground';
 
 export {
   StarLayer,
