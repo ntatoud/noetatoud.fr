@@ -8,9 +8,14 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./styles/app.css";
+import "@/styles/app.css";
 import React from "react";
-import { ThemeProvider } from "./components/theme-provider";
+import {
+  starColors,
+  ThemeProvider,
+  type Theme,
+} from "@/components/theme-provider";
+import { StarsBackground } from "@/components/animate-ui/stars-background";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -21,12 +26,12 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap",
   },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = React.useState("light");
+  const [theme, setTheme] = React.useState<Theme>("light");
   return (
     <html lang="en">
       <head>
@@ -37,6 +42,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className={theme}>
         <ThemeProvider theme={theme} setTheme={setTheme}>
+          <div className="fixed inset-0 -z-10 bg-[url('/clouds.png')] bg-cover bg-center bg-blend-overlay dark:bg-background/80 bg-background/50 bg-no-repeat transition-colors duration-500 ease-in-out" />
+          <StarsBackground
+            starColor={starColors[theme]}
+            className="absolute inset-0 flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75 nature:opacity-85"
+          />
           {children}
           <ScrollRestoration />
           <Scripts />

@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/theme-provider";
+import { themes, useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -11,24 +11,6 @@ import {
 import { Brush, Moon, Sun, TreePine } from "lucide-react";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-
-const themes = [
-  {
-    label: "Light",
-    value: "light",
-    Icon: Sun,
-  },
-  {
-    label: "Dark",
-    value: "dark",
-    Icon: Moon,
-  },
-  {
-    label: "Kodama Groove",
-    value: "kodama-groove",
-    Icon: TreePine,
-  },
-] as const;
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -57,7 +39,7 @@ export function ThemeSwitcher() {
           className="rounded-full border border-accent"
         >
           <span className="sr-only">Look at themes</span>
-          <Brush />
+          <Brush aria-hidden />
         </Button>
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
