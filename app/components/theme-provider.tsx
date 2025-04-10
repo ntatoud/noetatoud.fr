@@ -36,7 +36,7 @@ const ThemeContext = React.createContext<ThemeProviderContextValue | null>(
 );
 
 export function useTheme() {
-  const context = React.useContext(ThemeContext);
+  const context = React.use(ThemeContext);
   if (!context) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
@@ -48,9 +48,7 @@ export function ThemeProvider({
   setTheme,
   children,
 }: PropsWithChildren<ThemeProviderContextValue>) {
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  const value = React.useMemo(() => ({ theme, setTheme }), [theme, setTheme]);
+
+  return <ThemeContext value={value}>{children}</ThemeContext>;
 }

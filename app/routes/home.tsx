@@ -1,10 +1,7 @@
-import { Button } from '@/components/ui/button';
-
-import type { Route } from './+types/home';
-import { ThemeSwitcher } from '@/components/theme-switcher';
 import HeroSection from '@/components/organisms/hero';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: 'Noé Tatoud' },
     { name: 'description', content: 'Welcome to React Router!' },

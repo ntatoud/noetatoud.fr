@@ -1,11 +1,12 @@
 import eslint from '@eslint/js';
 import react from '@eslint-react/eslint-plugin';
+import { globalIgnores } from 'eslint/config';
 import reactHooks from 'eslint-plugin-react-hooks';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unicorn from 'eslint-plugin-unicorn';
 import tslint from 'typescript-eslint';
-
 export default tslint.config(
+  globalIgnores(['.react-router/**/*']),
   eslint.configs.recommended,
   tslint.configs.recommended,
   react.configs['recommended-typescript'],

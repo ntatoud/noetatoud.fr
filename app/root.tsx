@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   isRouteErrorResponse,
   Links,
@@ -7,15 +8,16 @@ import {
   ScrollRestoration,
 } from 'react-router';
 
-import type { Route } from './+types/root';
 import '@/styles/app.css';
-import React from 'react';
+
+import { StarsBackground } from '@/components/animate-ui/stars-background';
 import {
   starColors,
-  ThemeProvider,
   type Theme,
+  ThemeProvider,
 } from '@/components/theme-provider';
-import { StarsBackground } from '@/components/animate-ui/stars-background';
+
+import type { Route } from './+types/root';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
