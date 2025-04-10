@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+.pnpm-store
+dist
+build
+
+# IDE
+.vscode
+.idea
+
+# Git
+.git
+
+# Misc
+.DS_Store
+*.log
+*.lock 
