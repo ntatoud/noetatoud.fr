@@ -32,7 +32,7 @@ export function ThemeSwitcher() {
 
   return (
     <>
-      <div className="absolute top-0 right-0 p-4">
+      <div className="p-4">
         <Button
           size="icon"
           variant="ghost"

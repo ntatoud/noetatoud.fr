@@ -11,6 +11,7 @@ import {
 import '@/styles/app.css';
 
 import { StarsBackground } from '@/components/animate-ui/stars-background';
+import { Navbar } from '@/components/organisms/header';
 import {
   starColors,
   type Theme,
@@ -44,10 +45,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className={theme}>
         <ThemeProvider theme={theme} setTheme={setTheme}>
-          <div className="fixed inset-0 -z-10 bg-background/50 bg-[url('/clouds.png')] bg-cover bg-center bg-no-repeat bg-blend-overlay transition-colors duration-500 ease-in-out dark:bg-background/80" />
+          <div className="absolute inset-0 -z-10 bg-background/50 bg-[url('/clouds.png')] bg-cover bg-center bg-no-repeat bg-blend-overlay transition-colors duration-500 ease-in-out dark:bg-background/80" />
           <StarsBackground
             starColor={starColors[theme]}
-            className="absolute inset-0 flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75 nature:opacity-85"
+            className="absolute inset-0 -z-[5] flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75 nature:opacity-85"
           />
           {children}
           <ScrollRestoration />
@@ -58,8 +59,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App() {
-  return <Outlet />;
+export default function Root() {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
