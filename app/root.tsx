@@ -45,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className={theme}>
         <ThemeProvider theme={theme} setTheme={setTheme}>
-          <div className="absolute inset-0 -z-10 bg-background/50 bg-[url('/clouds.png')] bg-cover bg-center bg-no-repeat bg-blend-overlay transition-colors duration-500 ease-in-out dark:bg-background/80" />
+          <div className="clouds" />
           <StarsBackground
             starColor={starColors[theme]}
             className="absolute inset-0 -z-[5] flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75 nature:opacity-85"

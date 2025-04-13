@@ -1,4 +1,4 @@
-import { Moon, Sun, TreePine } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import React, { type PropsWithChildren } from 'react';
 
 export const themes = [
@@ -11,11 +11,6 @@ export const themes = [
     label: 'Dark',
     value: 'dark',
     Icon: Moon,
-  },
-  {
-    label: 'Nature',
-    value: 'nature',
-    Icon: TreePine,
   },
 ] as const;
 export type Theme = (typeof themes)[number]['value'];
