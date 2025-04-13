@@ -187,25 +187,27 @@ body {
     @apply bg-background font-sans text-foreground;
   }
 
-  .clouds {
-    background-image: url('/clouds.png');
-    background-size: cover; /* Maintains aspect ratio */
-    background-repeat: no-repeat; /* Prevents tiling */
-    background-position: center;
-    opacity: 0.6;
-    z-index: -100;
-    mix-blend-mode: multiply;
-    isolation: isolate;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
+  @media screen and (min-width: 1024px) {
+    .clouds {
+      background-image: url('/clouds.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.6;
+      z-index: -100;
+      mix-blend-mode: multiply;
+      isolation: isolate;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
 
-  .dark .clouds {
-    opacity: 1;
-    mix-blend-mode: soft-light;
+    .dark .clouds {
+      opacity: 1;
+      mix-blend-mode: soft-light;
+    }
   }
 }
