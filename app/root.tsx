@@ -19,6 +19,7 @@ import {
 } from '@/components/theme-provider';
 
 import type { Route } from './+types/root';
+import { ClientOnly } from './components/client-only';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -46,10 +47,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body className={theme}>
         <ThemeProvider theme={theme} setTheme={setTheme}>
           <div className="clouds" />
-          <StarsBackground
-            starColor={starColors[theme]}
-            className="absolute inset-0 -z-[5] flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75 nature:opacity-85"
-          />
+          <ClientOnly>
+            <StarsBackground
+              starColor={starColors[theme]}
+              className="nature:opacity-85 absolute inset-0 -z-[5] flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75"
+            />
+          </ClientOnly>
           {children}
           <ScrollRestoration />
           <Scripts />
