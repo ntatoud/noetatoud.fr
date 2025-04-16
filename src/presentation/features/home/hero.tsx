@@ -1,4 +1,4 @@
-import { Socials } from './socials';
+import { Socials } from '#presentation/features/home/socials';
 
 export function HeroSection() {
   return (
@@ -6,11 +6,11 @@ export function HeroSection() {
       <div className="w-full max-w-5xl space-y-8 text-center">
         <h1 className="text-xl font-light tracking-wide">
           Hi, I’m{' '}
-          <span className="font-serif font-medium text-accent-foreground">
+          <span className="text-accent-foreground font-serif font-medium">
             Noé Tatoud
           </span>{' '}
           — a full-stack{' '}
-          <span className="font-serif font-medium text-accent-foreground">
+          <span className="text-accent-foreground font-serif font-medium">
             developer
           </span>{' '}
           with a passion for crafting slick web experiences.

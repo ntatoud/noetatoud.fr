@@ -10,7 +10,7 @@ import {
 } from 'motion/react';
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '#shared/lib/utils';
 
 interface StarLayerProps extends HTMLMotionProps<'div'> {
   count: number;

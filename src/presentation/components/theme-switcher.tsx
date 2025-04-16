@@ -1,9 +1,9 @@
 import { Brush } from 'lucide-react';
 import React from 'react';
 
-import { themes, useTheme } from '@/components/theme-provider';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { themes, useTheme } from '#presentation/components/theme-provider';
+import { Badge } from '#presentation/components/ui/badge';
+import { Button } from '#presentation/components/ui/button';
 import {
   CommandDialog,
   CommandEmpty,
@@ -11,7 +11,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '@/components/ui/command';
+} from '#presentation/components/ui/command';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
