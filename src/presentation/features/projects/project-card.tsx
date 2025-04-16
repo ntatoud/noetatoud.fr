@@ -1,7 +1,8 @@
 import { ArrowRight } from 'lucide-react';
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import type { Project } from '#domain/projects/schemas';
+import { Badge } from '#presentation/components/ui/badge';
+import { Button } from '#presentation/components/ui/button';
 import {
   Card,
   CardAction,
@@ -10,9 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-
-import type { Project } from '@/content/projects/schemas';
+} from '#presentation/components/ui/card';
 
 export function ProjectCard({ dates, description, tags, title }: Project) {
   return (

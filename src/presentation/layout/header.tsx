@@ -1,10 +1,9 @@
 import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router';
 
-import { cn } from '@/lib/utils';
-
-import { ThemeSwitcher } from '@/components/theme-switcher';
-import { Button } from '@/components/ui/button';
+import { ThemeSwitcher } from '#presentation/components/theme-switcher';
+import { Button } from '#presentation/components/ui/button';
+import { cn } from '#shared/lib/utils';
 
 const navItems = [
   { name: 'home', path: '/' },

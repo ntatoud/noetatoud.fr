@@ -8,18 +8,18 @@ import {
   ScrollRestoration,
 } from 'react-router';
 
-import '@/styles/app.css';
+import '#presentation/styles/app.css';
 
-import { StarsBackground } from '@/components/animate-ui/stars-background';
-import { Navbar } from '@/layout/header';
+import type { Route } from './+types/root';
+
+import { StarsBackground } from '#presentation/components/animate-ui/stars-background';
+import { ClientOnly } from '#presentation/components/client-only';
 import {
   starColors,
   type Theme,
   ThemeProvider,
-} from '@/components/theme-provider';
-
-import type { Route } from './+types/root';
-import { ClientOnly } from './components/client-only';
+} from '#presentation/components/theme-provider';
+import { Navbar } from '#presentation/layout/header';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

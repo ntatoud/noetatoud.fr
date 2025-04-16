@@ -1,6 +1,6 @@
-import { banking } from '@/content/projects/banking';
-import { HeroSection } from '@/features/home/hero';
-import { ProjectCard } from '@/features/projects/project-card';
+import { banking } from '#domain/projects/banking';
+import { HeroSection } from '#presentation/features/home/hero';
+import { ProjectCard } from '#presentation/features/projects/project-card';
 
 export function meta() {
   return [
