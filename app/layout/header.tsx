@@ -1,13 +1,15 @@
 import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router';
+
 import { cn } from '@/lib/utils';
+
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Button } from '@/components/ui/button';
 
 const navItems = [
   { name: 'home', path: '/' },
-  { name: 'projects', path: '/projects', disabled: true },
-];
+  { name: 'projects', path: '/projects' },
+] as Array<{ name: string; path: string; disabled?: boolean }>;
 
 export function Navbar() {
   const location = useLocation();

@@ -11,7 +11,7 @@ import {
 import '@/styles/app.css';
 
 import { StarsBackground } from '@/components/animate-ui/stars-background';
-import { Navbar } from '@/components/organisms/header';
+import { Navbar } from '@/layout/header';
 import {
   starColors,
   type Theme,
@@ -36,6 +36,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = React.useState<Theme>('light');
+
   return (
     <html lang="en">
       <head>
