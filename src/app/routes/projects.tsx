@@ -1,5 +1,4 @@
-import { banking } from '#domain/projects/banking';
-import { ProjectCard } from '#presentation/features/projects/project-card';
+import { PageProjects } from '#presentation/features/projects/page';
 
 export function meta() {
   return [
@@ -9,5 +8,5 @@ export function meta() {
 }
 
 export default function Projects() {
-  return <ProjectCard {...banking} />;
+  return <PageProjects />;
 }

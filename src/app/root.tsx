@@ -12,14 +12,8 @@ import '#presentation/styles/app.css';
 
 import type { Route } from './+types/root';
 
-import { StarsBackground } from '#presentation/components/animate-ui/stars-background';
-import { ClientOnly } from '#presentation/components/client-only';
-import {
-  starColors,
-  type Theme,
-  ThemeProvider,
-} from '#presentation/components/theme-provider';
-import { Navbar } from '#presentation/layout/header';
+import { RootLayout } from '#presentation/layout/root-layout';
+import { RootProvider } from '#presentation/layout/root-provider';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -35,8 +29,6 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = React.useState<Theme>('light');
-
   return (
     <html lang="en">
       <head>
@@ -45,30 +37,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className={theme}>
-        <ThemeProvider theme={theme} setTheme={setTheme}>
-          <div className="clouds" />
-          <ClientOnly>
-            <StarsBackground
-              starColor={starColors[theme]}
-              className="nature:opacity-85 absolute inset-0 -z-[5] flex items-center justify-center rounded-xl dark:opacity-60 light:opacity-75"
-            />
-          </ClientOnly>
-          {children}
-          <ScrollRestoration />
-          <Scripts />
-        </ThemeProvider>
-      </body>
+      <RootProvider>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </RootProvider>
     </html>
   );
 }
 
 export default function Root() {
   return (
-    <>
-      <Navbar />
+    <RootLayout>
       <Outlet />
-    </>
+    </RootLayout>
   );
 }
 

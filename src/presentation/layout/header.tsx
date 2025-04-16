@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
-import { Link, useLocation } from 'react-router';
 
 import { ThemeSwitcher } from '#presentation/components/theme-switcher';
 import { Button } from '#presentation/components/ui/button';
+import { Link } from '#presentation/contracts/components/link';
+import { useLocation } from '#presentation/contracts/hooks/use-location';
 import { cn } from '#shared/lib/utils';
 
 const navItems = [
@@ -10,7 +11,7 @@ const navItems = [
   { name: 'projects', path: '/projects' },
 ] as Array<{ name: string; path: string; disabled?: boolean }>;
 
-export function Navbar() {
+export function Header() {
   const location = useLocation();
 
   return (
@@ -36,7 +37,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavItem"
-                      className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-primary"
+                      className="bg-primary absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full"
                       transition={{
                         type: 'spring',
                         stiffness: 350,
