@@ -6,6 +6,7 @@ export const zProject = () =>
   z.object({
     title: z.string(),
     // image: z.file(),
+    slug: z.string(),
     tags: z.array(z.string()),
     description: z.string(),
     content: z.custom<ReactNode>(),

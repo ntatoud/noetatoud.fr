@@ -1,6 +1,7 @@
+import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
 
-import type { Project } from '#domain/projects/schemas';
+import { type Project, zProject } from '#domain/projects/schemas';
 import { Badge } from '#presentation/components/ui/badge';
 import { Button } from '#presentation/components/ui/button';
 import {
@@ -12,14 +13,34 @@ import {
   CardHeader,
   CardTitle,
 } from '#presentation/components/ui/card';
+import { Link } from '#presentation/contracts/components/link';
 
-export function ProjectCard({ dates, description, tags, title }: Project) {
+const PROJECT_DATES_FORMAT = 'MMMM yyyy';
+export function ProjectCard(project: Project) {
+  const {
+    dates: rawDates,
+    description,
+    tags,
+    title,
+    slug,
+  } = zProject().parse(project);
+
+  const dates = {
+    from: format(rawDates.from, PROJECT_DATES_FORMAT),
+    to: format(rawDates.to, PROJECT_DATES_FORMAT),
+  };
+
   return (
-    <Card className="bg-background/40">
+    <Card className="bg-background/40 group relative isolate">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>
+          <Link to={`/projects/${slug}`}>
+            {title}
+            <span className="absolute inset-0 z-10" />
+          </Link>
+        </CardTitle>
         <CardDescription>
-          {dates.from.toUTCString()} – {dates.to.toUTCString()}
+          {dates.from} – {dates.to}
         </CardDescription>
         <div className="flex gap-1">
           {tags.map((tag) => (
@@ -34,7 +55,7 @@ export function ProjectCard({ dates, description, tags, title }: Project) {
 
       <CardFooter>
         <CardAction>
-          <Button>
+          <Button className="group-hover:-translate-y-0.5">
             More details
             <ArrowRight />
           </Button>

@@ -2,6 +2,7 @@ import type { Project } from './schemas';
 
 export const banking: Project = {
   title: 'Bank Card Management API',
+  slug: 'banking',
   dates: {
     from: new Date('2024-06'),
     to: new Date('2025-01'),
