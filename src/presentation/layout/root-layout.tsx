@@ -5,12 +5,11 @@ import { Header } from '@/presentation/layout/header';
 /**
  * Global app content with actual layout
  */
-// TODO: Do actual layout
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      {children}
+      <main className="min-h-[calc(100dvh-4rem)] px-4 py-6">{children}</main>
     </>
   );
 }
