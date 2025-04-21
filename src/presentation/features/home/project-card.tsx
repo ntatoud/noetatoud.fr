@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
 
-import { type Project, zProject } from '#domain/projects/schemas';
-import { Badge } from '#presentation/components/ui/badge';
-import { Button } from '#presentation/components/ui/button';
+import { type Project, zProject } from '@/domain/projects/schemas';
+import { Badge } from '@/presentation/components/ui/badge';
+import { Button } from '@/presentation/components/ui/button';
 import {
   Card,
   CardAction,
@@ -12,8 +12,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '#presentation/components/ui/card';
-import { Link } from '#presentation/contracts/components/link';
+} from '@/presentation/components/ui/card';
+import { Link } from '@/presentation/contracts/components/link';
 
 const PROJECT_DATES_FORMAT = 'MMMM yyyy';
 export function ProjectCard(project: Project) {

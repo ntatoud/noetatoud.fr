@@ -1,15 +1,17 @@
 import { motion } from 'motion/react';
 
-import { ThemeSwitcher } from '#presentation/components/theme-switcher';
-import { Button } from '#presentation/components/ui/button';
-import { Link } from '#presentation/contracts/components/link';
-import { useLocation } from '#presentation/contracts/hooks/use-location';
-import { cn } from '#shared/lib/utils';
+import { ThemeSwitcher } from '@/presentation/components/theme-switcher';
+import { Button } from '@/presentation/components/ui/button';
+import { Link } from '@/presentation/contracts/components/link';
+import { useLocation } from '@/presentation/contracts/hooks/use-location';
+import { cn } from '@/shared/lib/utils';
+
+export type NavItem = { name: string; path: string; disabled?: boolean };
 
 const navItems = [
   { name: 'home', path: '/' },
   { name: 'projects', path: '/projects' },
-] as Array<{ name: string; path: string; disabled?: boolean }>;
+] as Array<NavItem>;
 
 export function Header() {
   const location = useLocation();

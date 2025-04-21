@@ -1,6 +1,6 @@
 import type React from 'react';
 
-import { Header } from '#presentation/layout/header';
+import { Header } from '@/presentation/layout/header';
 
 /**
  * Global app content with actual layout

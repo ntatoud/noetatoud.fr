@@ -1,4 +1,4 @@
-import { Socials } from '#presentation/features/home/socials';
+import { Socials } from '@/presentation/features/home/socials';
 
 export function HeroSection() {
   return (

@@ -1,6 +1,6 @@
-import { banking } from '#domain/projects/banking';
-import { HeroSection } from '#presentation/features/home/hero';
-import { ProjectCard } from '#presentation/features/home/project-card';
+import { banking } from '@/domain/projects/banking';
+import { HeroSection } from '@/presentation/features/home/hero';
+import { ProjectCard } from '@/presentation/features/home/project-card';
 
 export function PageHome() {
   return (

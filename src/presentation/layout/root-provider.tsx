@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { StarsBackground } from '#presentation/components/animate-ui/stars-background';
-import { ClientOnly } from '#presentation/components/client-only';
+import { StarsBackground } from '@/presentation/components/animate-ui/stars-background';
+import { ClientOnly } from '@/presentation/components/client-only';
 import {
   starColors,
   type Theme,
   ThemeProvider,
-} from '#presentation/components/theme-provider';
+} from '@/presentation/components/theme-provider';
 
 /**
  * Wraps the whole application within the body, theme provider and adds background

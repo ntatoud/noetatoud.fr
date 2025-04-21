@@ -1,4 +1,4 @@
-import { PageHome } from '#presentation/features/home/page';
+import { PageHome } from '@/presentation/features/home/page';
 
 export function meta() {
   return [

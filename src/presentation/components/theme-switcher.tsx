@@ -1,9 +1,9 @@
 import { Brush } from 'lucide-react';
 import React from 'react';
 
-import { themes, useTheme } from '#presentation/components/theme-provider';
-import { Badge } from '#presentation/components/ui/badge';
-import { Button } from '#presentation/components/ui/button';
+import { themes, useTheme } from '@/presentation/components/theme-provider';
+import { Badge } from '@/presentation/components/ui/badge';
+import { Button } from '@/presentation/components/ui/button';
 import {
   CommandDialog,
   CommandEmpty,
@@ -11,7 +11,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '#presentation/components/ui/command';
+} from '@/presentation/components/ui/command';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -37,7 +37,7 @@ export function ThemeSwitcher() {
           size="icon"
           variant="ghost"
           onClick={() => setOpen(true)}
-          className="rounded-full border border-accent"
+          className="border-accent rounded-full border"
         >
           <span className="sr-only">Look at themes</span>
           <Brush aria-hidden />

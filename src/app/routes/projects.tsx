@@ -1,4 +1,4 @@
-import { PageProjects } from '#presentation/features/projects/page';
+import { PageProjects } from '@/presentation/features/projects/page';
 
 export function meta() {
   return [
