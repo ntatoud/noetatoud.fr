@@ -9,7 +9,7 @@ import {
 
 import { ProjectCard } from './project-card';
 
-export function Projects() {
+export function ProjectsSection() {
   return (
     <Section>
       <SectionHeader>

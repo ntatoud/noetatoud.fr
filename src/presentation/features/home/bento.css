@@ -1,0 +1,15 @@
+@layer components {
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      'location location location climbing climbing gender gaming gaming'
+      'location location location climbing climbing gender work work'
+      'passion passion eyesight eyesight eyesight eyesight work work';
+    grid-gap: 16px;
+    gap: 16px;
+  }
+
+  @media screen and (max-width: 480px) {
+  }
+}
