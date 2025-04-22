@@ -1,3 +1,5 @@
+import { PLACEHOLDER_URL } from '@/shared/constants';
+
 import type { Project } from './schemas';
 
 export const banking: Project = {
@@ -8,6 +10,7 @@ export const banking: Project = {
     to: new Date('2025-01'),
   },
   tags: ['PHP', 'Laravel', 'Docker', 'MySQL'],
+  image: PLACEHOLDER_URL,
   description:
     'A secure, multi-tenant B2B API for managing bank cards and financial transactions. Features include role-based authentication, granular permission controls, transaction logging, and full organization management. Built with Laravel and Docker, designed for scalability and easy integration.',
   content: (

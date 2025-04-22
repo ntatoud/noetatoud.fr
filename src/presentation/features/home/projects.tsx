@@ -1,4 +1,5 @@
 import { banking } from '@/domain/projects/banking';
+import { placeholder } from '@/domain/projects/placeholder';
 import {
   Section,
   SectionContent,
@@ -14,9 +15,11 @@ export function Projects() {
       <SectionHeader>
         <SectionTitle>My projects</SectionTitle>
       </SectionHeader>
-      <SectionContent className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+      <SectionContent className="grid grid-cols-1 gap-2 lg:grid-cols-3">
         <ProjectCard {...banking} />
-        <ProjectCard {...banking} />
+        <ProjectCard {...placeholder} />
+        <ProjectCard {...placeholder} />
+        {/* <ProjectCard {...placeholder} /> */}
       </SectionContent>
     </Section>
   );

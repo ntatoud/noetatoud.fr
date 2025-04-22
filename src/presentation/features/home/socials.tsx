@@ -12,7 +12,7 @@ export function Socials() {
       asChild
     >
       <a href={link} target="_blank" rel="noopener noreferrer">
-        linkedin
+        {label}
         <ArrowUpRight />
       </a>
     </Button>

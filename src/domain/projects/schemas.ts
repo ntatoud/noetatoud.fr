@@ -5,7 +5,7 @@ export type Project = z.infer<ReturnType<typeof zProject>>;
 export const zProject = () =>
   z.object({
     title: z.string(),
-    // image: z.file(),
+    image: z.string(),
     slug: z.string(),
     tags: z.array(z.string()),
     description: z.string(),

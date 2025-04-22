@@ -10,10 +10,10 @@ import {
 
 import '@/presentation/styles/app.css';
 
-import type { Route } from './+types/root';
-
 import { RootLayout } from '@/presentation/layout/root-layout';
 import { RootProvider } from '@/presentation/layout/root-provider';
+
+import type { Route } from './+types/root';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

@@ -19,7 +19,7 @@ export function SectionHeader({ className, ...props }: ComponentProps<'div'>) {
 export function SectionTitle({ className, ...props }: ComponentProps<'h2'>) {
   return (
     <h2
-      className={cn('font-mono text-xl font-medium tracking-wide', className)}
+      className={cn('font-mono text-xl font-semibold leading-none', className)}
       {...props}
     />
   );
