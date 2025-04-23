@@ -21,7 +21,7 @@ export function RootProvider({ children }: { children: React.ReactNode }) {
         <ClientOnly>
           <StarsBackground
             starColor={starColors[theme]}
-            className="nature:opacity-85 light:opacity-75 absolute inset-0 -z-[5] flex items-center justify-center rounded-xl dark:opacity-60"
+            className="nature:opacity-85 light:opacity-75 fixed inset-0 -z-10 flex items-center justify-center rounded-xl dark:opacity-60"
           />
         </ClientOnly>
         {children}

@@ -8,7 +8,7 @@ import { Bento } from '@/presentation/features/home/about/bento';
 
 export function AboutSection() {
   return (
-    <Section className="w-full">
+    <Section>
       <SectionHeader>
         <SectionTitle>About</SectionTitle>
       </SectionHeader>

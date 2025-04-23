@@ -3,13 +3,57 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas:
+      'location location location climbing climbing  job job job'
       'location location location climbing climbing gender gaming gaming'
-      'location location location climbing climbing gender job job'
-      'eyesight eyesight passion passion passion passion job job';
+      'eyesight eyesight eyesight passion passion gender gaming gaming';
     grid-gap: 16px;
     gap: 16px;
   }
 
-  @media screen and (max-width: 480px) {
+  @media (max-width: theme('screens.xl')) {
+    .bento {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        'location location climbing climbing gender gaming'
+        'location location climbing climbing gender job'
+        'eyesight eyesight passion passion passion';
+    }
+  }
+
+  @media (max-width: theme('screens.lg')) {
+    .bento {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        'location location climbing climbing'
+        'gender gender gaming gaming'
+        'job job passion passion'
+        'eyesight eyesight passion passion';
+    }
+  }
+
+  @media (max-width: theme('screens.md')) {
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'location location'
+        'gender gaming'
+        'climbing climbing'
+        'passion eyesight'
+        'job job';
+    }
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    .bento {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+        'location'
+        'climbing'
+        'gender'
+        'passion'
+        'gaming'
+        'eyesight'
+        'job';
+    }
   }
 }
