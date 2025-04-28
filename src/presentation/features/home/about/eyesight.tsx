@@ -1,44 +1,37 @@
-import { motion, useMotionValue } from 'motion/react';
-import { useRef, useState } from 'react';
+import { motion } from 'motion/react';
+import { useState } from 'react';
 
 import { CardContent, CardHeader } from '@/presentation/components/ui/card';
+import { BentoCard } from '@/presentation/features/home/about/bento';
+import { useMovable } from '@/presentation/hooks/use-movable';
 import { cn } from '@/shared/lib/utils';
 
-import { BentoCard } from './bento';
+export const DEFAULT_GLASSES_POS = { x: -1, y: -22 };
 
-export const DEFAULT_GLASSES_POS_X = -1;
-export const DEFAULT_GLASSES_POS_Y = -22;
-
-export function Glasses() {
-  const x = useMotionValue(DEFAULT_GLASSES_POS_X);
-  const y = useMotionValue(DEFAULT_GLASSES_POS_Y);
-  const avatarRef = useRef<HTMLImageElement>(null);
-  const glassesRef = useRef<HTMLImageElement>(null);
-
+export function EyeseightCard() {
   const [hasGlasses, setHasGlasses] = useState(true);
-  const checkOverlap = () => {
-    const avatarRect = avatarRef.current?.getBoundingClientRect();
-    const glassesRect = glassesRef.current?.getBoundingClientRect();
 
-    if (avatarRect && glassesRect) {
-      const headWidth = (1 / 2) * avatarRect.width;
-      const headHeight = (1 / 2) * avatarRect.height;
-      const areGlassesClose = !(
-        avatarRect.right - (4 / 3) * headWidth < glassesRect.left ||
-        avatarRect.left + (4 / 3) * headWidth > glassesRect.right ||
-        avatarRect.bottom - (4 / 3) * headHeight < glassesRect.top ||
-        avatarRect.top + (4 / 5) * headHeight > glassesRect.bottom
-      );
-
-      setHasGlasses(areGlassesClose);
-      if (areGlassesClose) {
-        x.set(DEFAULT_GLASSES_POS_X);
-        y.set(DEFAULT_GLASSES_POS_Y);
-
-        return;
-      }
-    }
-  };
+  const {
+    anchorRef: avatarRef,
+    movingRef: glassesRef,
+    x,
+    y,
+    checkOverlap,
+  } = useMovable<HTMLImageElement>({
+    onOverlapCheck: (areClose) => {
+      setHasGlasses(areClose);
+    },
+    getAnchorOffset({ anchorHeight, anchorWidth }) {
+      return {
+        offsetRight: (2 / 3) * anchorWidth,
+        offsetLeft: (2 / 3) * anchorHeight,
+        offsetBottom: (2 / 3) * anchorHeight,
+        offsetTop: (2 / 5) * anchorHeight,
+      };
+    },
+    defaultX: DEFAULT_GLASSES_POS.x,
+    defaultY: DEFAULT_GLASSES_POS.y,
+  });
 
   return (
     <BentoCard name="eyesight" className="gap-3 pb-0">

@@ -6,7 +6,7 @@ import { job } from '@/domain/about/job';
 import { Card, CardContent } from '@/presentation/components/ui/card';
 import { cn } from '@/shared/lib/utils';
 
-import { Glasses } from './glasses';
+import { EyeseightCard } from './eyesight';
 
 export function Bento() {
   return (
@@ -27,7 +27,7 @@ export function Bento() {
       <BentoCard name="climbing">climbing</BentoCard>
       <BentoCard name="gaming">gaming</BentoCard>
       <BentoCard name="passion">passion</BentoCard>
-      <Glasses />
+      <EyeseightCard />
     </div>
   );
 }
