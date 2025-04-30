@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 
 import { CardContent, CardHeader } from '@/presentation/components/ui/card';
-import { BentoCard } from '@/presentation/features/home/about/bento';
+import { BentoCard } from '@/presentation/features/home/about/bento-card';
 import { useMovable } from '@/presentation/hooks/use-movable';
 import { cn } from '@/shared/lib/utils';
 

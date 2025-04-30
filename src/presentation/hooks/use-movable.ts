@@ -46,7 +46,6 @@ export function useMovable<
         })
       : { offsetLeft: 0, offsetBottom: 0, offsetRight: 0, offsetTop: 0 };
 
-    console.log(offsetLeft, offsetBottom);
     const areClose = !(
       anchorRect.right - offsetRight < movingRect.left ||
       anchorRect.left + offsetLeft > movingRect.right ||
