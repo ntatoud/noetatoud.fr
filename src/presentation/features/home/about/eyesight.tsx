@@ -1,10 +1,14 @@
-import { motion } from 'motion/react';
+import { motion, useTransform, useVelocity } from 'motion/react';
 import { useState } from 'react';
 
 import { CardContent, CardHeader } from '@/presentation/components/ui/card';
 import { BentoCard } from '@/presentation/features/home/about/bento-card';
 import { useMovable } from '@/presentation/hooks/use-movable';
 import { cn } from '@/shared/lib/utils';
+
+import Glasses from '/glasses.png';
+import AvatarWithGlasses from '/with-glasses.png';
+import AvatarWithoutGlasses from '/without-glasses.png';
 
 export const DEFAULT_GLASSES_POS = { x: -1, y: -22 };
 
@@ -32,7 +36,11 @@ export function EyeseightCard() {
     defaultX: DEFAULT_GLASSES_POS.x,
     defaultY: DEFAULT_GLASSES_POS.y,
   });
+  const velocityX = useVelocity(x);
 
+  const rotate = useTransform(velocityX, (vx) => {
+    return Math.min(Math.max(vx * 5, -30), 30);
+  });
   return (
     <BentoCard name="eyesight" className="gap-3 pb-0">
       <CardHeader>
@@ -46,13 +54,13 @@ export function EyeseightCard() {
           {hasGlasses ? (
             <img
               ref={avatarRef}
-              src="/with-glasses.png"
+              src={AvatarWithGlasses}
               alt="Me with glasses"
             />
           ) : (
             <img
               ref={avatarRef}
-              src="/without-glasses.png"
+              src={AvatarWithoutGlasses}
               alt="Me without glasses"
             />
           )}
@@ -62,11 +70,22 @@ export function EyeseightCard() {
             ref={glassesRef}
             drag
             onDragEnd={checkOverlap}
-            dragElastic={0.2}
             dragMomentum={false}
-            style={{ x, y }}
-            whileDrag={{ scale: 1.05 }}
-            src="/glasses.png"
+            style={{
+              x,
+              y,
+              rotate,
+              transformOrigin: 'center center',
+            }}
+            whileDrag={{
+              scale: 1.05,
+              transition: { type: 'spring', stiffness: 300, damping: 20 },
+            }}
+            animate={{
+              rotate: hasGlasses ? 0 : rotate.get(),
+              transition: { type: 'spring', stiffness: 200, damping: 15 },
+            }}
+            src={Glasses}
             className={cn(
               'absolute h-[68px] w-[130px] cursor-grab object-cover transition-transform duration-300 ease-out hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.5)] focus:outline-none focus:drop-shadow-[0_0_10px_rgba(0,0,0,0.5)] active:cursor-grabbing'
             )}

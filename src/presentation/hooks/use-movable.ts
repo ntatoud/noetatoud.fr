@@ -53,7 +53,6 @@ export function useMovable<
       anchorRect.top + offsetTop > movingRect.bottom
     );
 
-    console.log(areClose);
     onOverlapCheck?.(areClose);
     if (areClose) {
       x.set(defaultX);
