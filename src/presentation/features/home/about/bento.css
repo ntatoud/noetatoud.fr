@@ -3,9 +3,9 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas:
-      'location location location climbing climbing  job job job'
-      'location location location climbing climbing gender gaming gaming'
-      'eyesight eyesight eyesight passion passion gender gaming gaming';
+      'location location location climbing climbing  gender gaming gaming'
+      'location location location passion passion gender gaming gaming'
+      'eyesight eyesight eyesight passion passion job job job';
     grid-gap: 16px;
     gap: 16px;
   }
@@ -14,9 +14,9 @@
     .bento {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
-        'location location climbing climbing gender gaming'
-        'location location climbing climbing gender job'
-        'eyesight eyesight passion passion passion';
+        'location location climbing climbing gaming gaming'
+        'location location eyesight eyesight gender gender'
+        'passion passion eyesight eyesight job job';
     }
   }
 
