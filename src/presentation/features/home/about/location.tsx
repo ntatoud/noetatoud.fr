@@ -1,37 +1,44 @@
+import { AnimatePresence, motion } from 'motion/react';
 import React from 'react';
 
 import { CardContent } from '@/presentation/components/ui/card';
 import { BentoCard } from '@/presentation/features/home/about/bento-card';
+import { useSound } from '@/presentation/hooks/use-sound';
 
 import GrosHorloge from '/gros-horloge.png';
+// [TODO] Use mp3 file
+import HintCoinFound from '/sounds/hint_coin.wav';
 
 export function LocationCard() {
-  const audioRef = React.useRef<HTMLAudioElement | null>(null);
-
-  React.useEffect(() => {
-    audioRef.current = new Audio('/sounds/puzzle_found.mp3');
-    audioRef.current.volume = 0.5;
-  }, []);
-
-  const handleClick = () => {
-    if (!audioRef.current) return;
-
-    try {
-      audioRef.current.currentTime = 0; // Reset to start
-      audioRef.current.play();
-    } catch (error) {
-      console.warn('Sound playback failed:', error);
-    }
-  };
+  const [showExclamation, setShowExclamation] = React.useState(false);
+  const { play } = useSound(HintCoinFound, {
+    volume: 0.5,
+    onPlay: () => {
+      setShowExclamation(true);
+      setTimeout(() => setShowExclamation(false), 1000);
+    },
+  });
 
   return (
     <BentoCard name="location" className="flex items-center justify-center">
       <CardContent>
         <div className="relative">
           <div
-            onClick={handleClick}
+            onClick={play}
             className="bottom-1/5 absolute left-1/2 size-36 -translate-x-1/2"
-          />
+          >
+            <AnimatePresence>
+              {showExclamation && (
+                <motion.div
+                  initial={{ opacity: 0, y: 0 }}
+                  animate={{ opacity: 1, y: -40 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ type: 'spring', stiffness: 500, damping: 15 }}
+                  className="absolute bottom-1/2 left-1/2 size-5 -translate-x-1/2 rounded-full bg-yellow-600"
+                ></motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <img
             src={GrosHorloge}
             alt="Gros Horloge - Rouen"
