@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'motion/react';
 import React from 'react';
 
-import { CardContent } from '@/presentation/components/ui/card';
+import { CardContent, CardFooter } from '@/presentation/components/ui/card';
 import { BentoCard } from '@/presentation/features/home/about/bento-card';
 import { useSound } from '@/presentation/hooks/use-sound';
 
@@ -20,8 +20,11 @@ export function LocationCard() {
   });
 
   return (
-    <BentoCard name="location" className="flex items-center justify-center">
-      <CardContent>
+    <BentoCard
+      name="location"
+      className="flex items-center justify-center pt-2"
+    >
+      <CardContent className="px-2">
         <div className="relative">
           <div
             onClick={play}
@@ -45,10 +48,12 @@ export function LocationCard() {
             className="mb-6 rounded-lg"
           />
         </div>
-        <p>
-          📍 I currently live in Rouen, France — a beautiful city rich in
-          history... and rain. ☔️
-        </p>
+        <CardFooter>
+          <p>
+            📍 I currently live in Rouen, France — a beautiful city rich in
+            history... and rain. ☔️
+          </p>
+        </CardFooter>
       </CardContent>
     </BentoCard>
   );

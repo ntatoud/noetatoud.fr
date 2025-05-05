@@ -6,8 +6,8 @@ import Climbing from '/public/climbing.jpeg';
 
 export function ClimbingCard() {
   return (
-    <BentoCard name="climbing">
-      <CardContent>
+    <BentoCard name="climbing" className="pt-2">
+      <CardContent className="px-2">
         <div className="w-full">
           <img
             src={Climbing}

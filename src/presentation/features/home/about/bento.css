@@ -4,7 +4,7 @@
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas:
       'location location location music music music empty empty'
-      'location location location none none none climbing climbing'
+      'location location location none none climbing climbing climbing'
       'eyesight eyesight eyesight job job job job job';
     grid-gap: 16px;
     gap: 16px;
@@ -14,9 +14,9 @@
     .bento {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
-        'location location location job job job'
-        'location location location job job job'
-        'climbing climbing climbing music music music';
+        'location location location music music music'
+        'location location location climbing climbing climbing'
+        'eyesight eyesight eyesight job job job';
     }
   }
 
@@ -24,9 +24,9 @@
     .bento {
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas:
-        'location location location location'
-        'job job job job'
-        'climbing climbing music music';
+        'location location music music'
+        'location location climbing climbing'
+        'eyesight eyesight job job';
     }
   }
 
@@ -35,9 +35,10 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         'location location'
-        'job job'
+        'music music'
         'climbing climbing'
-        'music music';
+        'eyesight eyesight'
+        'job job';
     }
   }
 
@@ -46,9 +47,10 @@
       grid-template-columns: repeat(1, 1fr);
       grid-template-areas:
         'location'
-        'job'
+        'music'
         'climbing'
-        'music';
+        'eyesight'
+        'job';
     }
   }
 }
