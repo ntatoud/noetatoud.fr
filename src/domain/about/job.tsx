@@ -1,4 +1,4 @@
-import { LogoBs } from './logo-bs';
+import { LogoBs } from '@/domain/about/logo-bs';
 
 export const job = {
   Logo: LogoBs,

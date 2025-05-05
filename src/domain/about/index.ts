@@ -1,8 +1,1 @@
-export type AboutKeys =
-  | 'job'
-  | 'eyesight'
-  | 'passion'
-  | 'location'
-  | 'climbing'
-  | 'gender'
-  | 'gaming';
+export type AboutKeys = 'job' | 'eyesight' | 'location' | 'climbing' | 'music';

@@ -3,9 +3,9 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas:
-      'location location location climbing climbing  gender gaming gaming'
-      'location location location passion passion gender gaming gaming'
-      'eyesight eyesight eyesight passion passion job job job';
+      'location location location music music music empty empty'
+      'location location location none none none climbing climbing'
+      'eyesight eyesight eyesight job job job job job';
     grid-gap: 16px;
     gap: 16px;
   }
@@ -14,9 +14,9 @@
     .bento {
       grid-template-columns: repeat(6, 1fr);
       grid-template-areas:
-        'location location climbing climbing gaming gaming'
-        'location location eyesight eyesight gender gender'
-        'passion passion eyesight eyesight job job';
+        'location location location job job job'
+        'location location location job job job'
+        'climbing climbing climbing music music music';
     }
   }
 
@@ -24,10 +24,9 @@
     .bento {
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas:
-        'location location climbing climbing'
-        'gender gender gaming gaming'
-        'job job passion passion'
-        'eyesight eyesight passion passion';
+        'location location location location'
+        'job job job job'
+        'climbing climbing music music';
     }
   }
 
@@ -36,10 +35,9 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         'location location'
-        'gender gaming'
+        'job job'
         'climbing climbing'
-        'passion eyesight'
-        'job job';
+        'music music';
     }
   }
 
@@ -48,12 +46,9 @@
       grid-template-columns: repeat(1, 1fr);
       grid-template-areas:
         'location'
+        'job'
         'climbing'
-        'gender'
-        'passion'
-        'gaming'
-        'eyesight'
-        'job';
+        'music';
     }
   }
 }
