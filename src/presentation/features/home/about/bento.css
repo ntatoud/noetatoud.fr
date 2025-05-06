@@ -1,0 +1,72 @@
+@layer components {
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      'location location location music music music empty empty'
+      'location location location none none climbing climbing climbing'
+      'eyesight eyesight eyesight job job job job job';
+    grid-gap: 16px;
+    gap: 16px;
+  }
+
+  @media (max-width: theme('screens.xl')) {
+    .bento {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        'location location location music music music'
+        'location location location climbing climbing climbing'
+        'eyesight eyesight eyesight job job job';
+    }
+  }
+
+  @media (max-width: theme('screens.lg')) {
+    .bento {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+        'location location music music'
+        'location location climbing climbing'
+        'eyesight eyesight job job';
+    }
+  }
+
+  @media (max-width: theme('screens.md')) {
+    .bento {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'location location'
+        'music music'
+        'climbing climbing'
+        'eyesight eyesight'
+        'job job';
+    }
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    .bento {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+        'location'
+        'music'
+        'climbing'
+        'eyesight'
+        'job';
+    }
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}

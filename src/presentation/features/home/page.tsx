@@ -1,11 +1,13 @@
+import { AboutSection } from '@/presentation/features/home/about';
 import { HeroSection } from '@/presentation/features/home/hero';
-import { Projects } from '@/presentation/features/home/projects';
+import { ProjectsSection } from '@/presentation/features/home/projects';
 
 export function PageHome() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
+    <div className="flex min-h-svh flex-col items-center justify-center overflow-hidden">
       <HeroSection />
-      <Projects />
+      <ProjectsSection />
+      <AboutSection />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&: is(.dark *));
 @custom-variant light (&:is(.light *));
 
 html,
@@ -184,9 +184,8 @@ body {
     @apply transition-colors duration-300;
   }
   body {
-    @apply bg-background font-sans text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
-
   @media screen and (min-width: 1024px) {
     .clouds {
       background-image: url('/clouds.png');
